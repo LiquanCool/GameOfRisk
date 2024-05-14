@@ -6,58 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href = "style.css" type="text/css"/>
+    <script src = "code.js"></script>
 </head>
 <body>
     <div class="grid">
 		<div class="cell" id="defense">
-            <p>d</p>
-            <button onclick="upgrade()" id = "secure">Secure Configuration</button>
-            <button onclick="upgrade()" id = "access">Access Control</button>
-            <button onclick="upgrade()" id = "amlware">Malware Protection</button>
-            <button onclick="upgrade()" id = "training">Security Training</button>
-            <button onclick="upgrade()" id = "security">Building Security</button>
-            <button onclick="upgrade()" id = "monitor">Network Monitoring</button>
-            <button onclick="upgrade()" id = "policies">Security Policies</button>
-            <button onclick="upgrade()" id = "firewall">Firewalls and Advanced Security Devices</button>
-            <button onclick="upgrade()" id = "backup">Data Backup</button>
+            <p>Defense Options</p>
+            <button onclick="buy('secure')" id = "secure">Secure Configuration</button>
+            <button onclick="buy('access')" id = "access">Access Control</button>
+            <button onclick="buy('malware')" id = "amlware">Malware Protection</button>
+            <button onclick="buy('training')" id = "training">Security Training</button>
+            <button onclick="buy('security')" id = "security">Building Security</button>
+            <button onclick="buy('monitor')" id = "monitor">Network Monitoring</button>
+            <button onclick="buy('policies')" id = "policies">Security Policies</button>
+            <button onclick="buy('firewall')" id = "firewall">Firewalls and Advanced Security Devices</button>
+            <button onclick="buy('backup')" id = "backup">Data Backup</button>
 		</div>
 		<div class="cell" id="stats">
-            <p>s</p>
+            <h1>Game of Risk</h1>
+            <p>Intructions: You are the cybersecurity person for a company which owns $2000 SLE worth of equipment, $2000 SLE worth of data, and generates $1000 SLE a day.</p>
+            <p>You have a budget of 1000 dollars defend your company or attack your attackers. Roll the dice and get to the end. Your objective is to have as much SLE + money left as possible.</p>
+            <p id = "money">Money: 1000</p>
             <button onclick="roll()" id = "roll">diceimage</button>
 		</div>
 		<div class="cell" id="attack">
-            <p>a</p>
-            <button onclick="upgrade()" id = "spoofing">Spoofing</button>
-            <button onclick="upgrade()" id = "man">Man-in-the-Middle</button>
-            <button onclick="upgrade()" id = "xss">XSS</button>
-            <button onclick="upgrade()" id = "sqli">SQLi</button>
-            <button onclick="upgrade()" id = "dos">DoS</button>
-            <button onclick="upgrade()" id = "social">Social Engineering</button>
-            <button onclick="upgrade()" id = "physical">Physical Security Flaw</button>
-            <button onclick="upgrade()" id = "weak">Weak Configuration/Permissions</button>
-            <button onclick="upgrade()" id = "lack">Lack of Awareness</button>
-            <button onclick="upgrade()" id = "insecure">Insecure Wifi</button>
-            <button onclick="upgrade()" id = "zero">Zero day exploit</button>
-            <button onclick="upgrade()" id = "phishing">Phishing</button>
+            <p>Attack Options</p>
+            <button onclick="buy('spoofing')" id = "spoofing">Spoofing</button>
+            <button onclick="buy('man')" id = "man">Man-in-the-Middle</button>
+            <button onclick="buy('xss')" id = "xss">XSS</button>
+            <button onclick="buy('sqli')" id = "sqli">SQLi</button>
+            <button onclick="buy('dos')" id = "dos">DoS</button>
+            <button onclick="buy('social')" id = "social">Social Engineering</button>
+            <button onclick="buy('physical')" id = "physical">Physical Security Flaw</button>
+            <button onclick="buy('weak')" id = "weak">Weak Configuration/Permissions</button>
+            <button onclick="buy('lack')" id = "lack">Lack of Awareness</button>
+            <button onclick="buy('insecure')" id = "insecure">Insecure Wifi</button>
+            <button onclick="buy('zero')" id = "zero">Zero day exploit</button>
+            <button onclick="buy('phishing')" id = "phishing">Phishing</button>
 		</div>
 		<div class="cell" id="board">
             <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
-            <img id="start" src="start.png"/>
+            <img id="spoofing" src="spoofing.png"/>
+            <img id="man" src="man.png"/>
+            <img id="xss" src="xss.png"/>
+            <img id="sqli" src="sqli.png"/>
+            <img id="dos" src="dos.png"/>
+            <img id="social" src="social.png"/>
+            <img id="physical" src="physical.png"/>
+            <img id="weak" src="weak.png"/>
+            <img id="lack" src="lack.png"/>
+            <img id="insecure" src="insecure.png"/>
+            <img id="zero" src="zero.png"/>
+            <img id="phishing" src="phishing.png"/>
+            <img id="end" src="end.png"/>
 		</div>
 
-    <script src = "code.js"></script>
+
 </body>
 </html>
