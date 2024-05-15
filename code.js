@@ -23,7 +23,7 @@ let phishing = false;
 const game = ["start", "spoofing", "man", "xss", "sqli", "dos", "social", "physical", "weak", "lack", "insecure", "zero", "phishing", "end"]
 let current = 0;
 let money = 1000;
-let SEL = 5000;
+let sle = 5000;
 
 
 function roll()
@@ -32,7 +32,7 @@ function roll()
     if (current + roll > 12)
     {
         current = 13;
-        //say end game
+        document.getElementById('update').textContent = "You got to the end with " + (money + sle) + " dollars.";
     }
     else
     {
@@ -55,57 +55,186 @@ function land(x)
 {
     if(x == "spoofing")
     {
-        if (secure == true || monitor == true || firewall == true)
+        if (secure == true || monitor == true || firewall == true || backup == true)
         {
-            
+            document.getElementById('update').textContent = "You got hit by a spoofing attack but fortunately your systems had the right protection.";
+        }
+        else if (dos == true)
+        {
+            document.getElementById('update').textContent = "The hackers attempted a SQL injection attack but forgot you DDoSed their wifi.";
         }
         else
         {
-
+            sle-=2000;
+            document.getElementById('sle').textContent = "SLE: " + sle;
+            document.getElementById('update').textContent = "You got hit by a spoofing attack and all your data got stolen. You had to pay $2000 to get it back.";
         }
     }
     if(x == "man")
     {
-        
+        if (secure == true || monitor == true || firewall == true || backup == true)
+        {
+                document.getElementById('update').textContent = "You got hit by a man-in-the-middle attack but fortunately your systems had the right protection.";
+        }
+        else if (dos == true)
+        {
+                document.getElementById('update').textContent = "The hackers attempted a SQL injection attack but forgot you DDoSed their wifi.";
+        }
+        else
+        {
+                sle-=2000;
+                document.getElementById('sle').textContent = "SLE: " + sle;
+                document.getElementById('update').textContent = "You got hit by a man-in-the-middle attack and all your data got leaked. You had to pay $2000 to get it back.";
+        }
     }
     if(x == "xss")
     {
-        
+        if (policies == true || training == true || malware == true)
+        {
+                document.getElementById('update').textContent = "You got hit by a cross-site scripting attack but fortunately your employees knew to not click on suspicious links and/or you had malware protection.";
+        }
+        else
+        {
+                sle-=2000;
+                document.getElementById('sle').textContent = "SLE: " + sle;
+                document.getElementById('update').textContent = "You got hit by a cross-site scripting attack and all your data got leaked. You had to pay $2000 to get it back.";
+        }
     }
     if(x == "sqli")
     {
-        
+        if (secure == true || monitor == true || firewall == true || backup == true)
+            {
+                    document.getElementById('update').textContent = "You got hit by a SQL injection attack but fortunately your systems had the right protection.";
+            }
+            else if (dos == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted a SQL injection attack but forgot you DDoSed their wifi.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "You got hit by a SQL injection attack and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "dos")
     {
-        
+        if (firewall == true || backup == true)
+            {
+                    document.getElementById('update').textContent = "You got hit by a DoS attack but fortunately your systems had the right protection.";
+            }
+            else if (dos == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted a DoS attack but you DDoSed them first lol";
+            }
+            else
+            {
+                    sle-=1000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "Your wifi got hit by a DoS attack so your employees could not work and lost $1000 in profits.";
+            }
     }
     if(x == "social")
     {
-        
+        if (policies == true || training == true || access == true)
+            {
+                    document.getElementById('update').textContent = "You got hit by a social engineering attack but fortunately your employees knew better and/or your systems had protection.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "You got hit by a social engineering scripting attack and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "physical")
     {
-        
+        if (security == true )
+            {
+                    document.getElementById('update').textContent = "The hackers tried to go through the hole in the company building but fortunately your bodyguards fought them off.";
+            }
+            else
+            {
+                    sle-=5000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "The hackers walked through the hole in the company walls and stole the equipment, the data servers, and even the employees. gg unlucky -$5000";
+            }
     }
     if(x == "weak")
     {
-        
+        if (secure == true || access == true || policies == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to exploit weak configurations but fortunately your systems had the right protection.";
+            }
+            else if (dos == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to exploit weak configurations but forgot you DDoSed their wifi.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "The hackers exploited your weak configurations and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "lack")
     {
-        
+        if (policies == true || training == true || access == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to exploit your lack of awareness but fortunately you did not lack awarness.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "The hackers exploited your lack of awareness and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "insecure")
     {
-        
+        if (secure == true || access == true || policies == true || monitor == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to exploit insecure wifi but fortunately your systems had the right protection.";
+            }
+            else if (dos == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to exploit insecure wifi but forgot you DDoSed their wifi.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "The hackers exploited your insecure wifi and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "zero")
     {
-        
+        if (backup == true)
+            {
+                    document.getElementById('update').textContent = "You got hit by a zero day exploit but they did not save the data so your data back up actually worked this time";
+            }
+            else if (dos == true)
+            {
+                    document.getElementById('update').textContent = "The hackers attempted to use a zero day exploit but forgot you DDoSed their wifi.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "The hackers used a new zero day exploit and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
     if(x == "phishing")
     {
-        
+        if (policies == true || training == true)
+            {
+                    document.getElementById('update').textContent = "You got hit by a phishing attack but fortunately your employees knew to not click on suspicious links.";
+            }
+            else
+            {
+                    sle-=2000;
+                    document.getElementById('sle').textContent = "SLE: " + sle;
+                    document.getElementById('update').textContent = "You got hit by a phishing attack and all your data got leaked. You had to pay $2000 to get it back.";
+            }
     }
 }
