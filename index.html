@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href = "style.css" type="text/css"/>
-    <script src = "code.js"></script>
 </head>
 <body>
     <div class="grid">
@@ -24,11 +23,11 @@
 		</div>
 		<div class="cell" id="stats">
             <h1>Game of Risk</h1>
-            <p>Intructions: You are the cybersecurity person for a company which owns $2000 SLE worth of equipment, $2000 SLE worth of data, and generates $1000 SLE a day.</p>
-            <p>You have a budget of 1000 dollars defend your company or attack your attackers. Roll the dice and get to the end. Your objective is to have as much SLE + money left as possible.</p>
+            <p>Intructions: You are the cybersecurity person for a company which owns $2000 SLE worth of equipment, $2000 SLE worth of data, and generates $1000 SLE a day. The red dot is where you are.</p>
+            <p>You have a budget of 1000 dollars defend your company or attack your attackers. You can choose to either defend or attack with the buttons on the sides, or save your money. Roll the dice and get to the end. Your objective is to have as much SLE + money left as possible.</p>
             <p id = "money">Money: 1000</p>
             <p id = "sle">SLE: 5000</p>
-            <button onclick="roll()" id = "roll">diceimage</button>
+            <button onclick="roll()" id = "roll"><img id="dice" src="dice.png"/></button>
             <p id = "update"></p>
 		</div>
 		<div class="cell" id="attack">
@@ -47,7 +46,7 @@
             <button onclick="buy('phishing')" id = "phishing">Phishing</button>
 		</div>
 		<div class="cell" id="board">
-            <img id="start" src="start.png"/>
+            <img id="start" src="start2.png"/>
             <img id="spoofing" src="spoofing.png"/>
             <img id="man" src="man.png"/>
             <img id="xss" src="xss.png"/>
@@ -60,9 +59,9 @@
             <img id="insecure" src="insecure.png"/>
             <img id="zero" src="zero.png"/>
             <img id="phishing" src="phishing.png"/>
-            <img id="end" src="win.png"/>
+            <img id="win" src="win.png"/>
 		</div>
 
-
+            <script src = "code.js"></script>
 </body>
 </html>
