@@ -19,7 +19,6 @@ let lack = false;
 let insecure = false;
 let zero = false;
 let phishing = false;
-
 const game = ["start", "spoofing", "man", "xss", "sqli", "dos", "social", "physical", "weak", "lack", "insecure", "zero", "phishing", "win"]
 let current = 0;
 let money = 1000;
@@ -33,7 +32,6 @@ function roll()
     {
         current = 13;
         document.getElementById('update').textContent = "You got to the end with " + (money + sle) + " dollars.";
-        document.getElementById('win').src = "win2.png";
     }
     else
     {
@@ -47,8 +45,7 @@ function roll()
 function active(x, y)
 {
         str = 'document.getElementById("' + game[x] + '").src = "' + game[x] + '2' + '.png"';
-        document.getElementById('xss').src = "'xss2.png'"//doesnt work
-        eval(document.getElementById('xss').src = "'xss2.png'");
+        eval(str);
         eval("document.getElementById('" + game[y] + "').src = '" + game[y] + ".png'");
 }
 function buy(x)
