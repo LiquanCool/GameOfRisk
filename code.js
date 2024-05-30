@@ -28,10 +28,15 @@ let previous  = 0;
 function roll()
 {
     let roll = Math.floor((Math.random() * 5) + 1);
+    if(current == 13)
+    {
+        return "game over";
+    }
     if (current + roll > 12)
     {
+        previous = current;
         current = 13;
-        document.getElementById('update').textContent = "You got to the end with " + (money + sle) + " dollars.";
+        document.getElementById('update').textContent = "You got to the end with " + (money + sle) + " dollars. Refresh the page to play again and try to get a better score.";
     }
     else
     {
